@@ -21,6 +21,10 @@
     "node": ">=17"
   },
   "dependencies": {
+    "@css-modules-theme/core": "^2.3.0",
+    "@types/node": "^20.2.5",
+    "@yext/answers-headless-react": "^1.2.0",
+    "@yext/search-ui-react": "^1.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
