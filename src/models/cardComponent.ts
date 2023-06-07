@@ -14,7 +14,7 @@ export interface CardConfig extends CardConfigTypes {
 }
 
 /**
- * The props provided to every {@link CardComponent).
+ * The props provided to every {@link CardComponent}.
  */
 export interface CardProps {
   result: Result,

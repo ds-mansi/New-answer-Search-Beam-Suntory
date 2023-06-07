@@ -63,7 +63,6 @@ function limit(string?: string, limit = 0) {
 }
 // TODO: format hours, hours to middle, fake CTAs on the right, hours to show current status and then can be expanded, limit to 3 results for now, margin between map
 export function FaqCard(props: TrainerCardProps): JSX.Element {
-  // console.log(props, "props");
 
   return (
     <>

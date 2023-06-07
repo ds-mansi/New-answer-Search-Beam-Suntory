@@ -46,31 +46,22 @@ interface ProductCard {
   image: { url: string };
 }
 interface ArticleCardType {
-  name: string;
-  c_articleCard: ProductCard;
+  name?: string;
+  c_articleCard?: ProductCard;
 }
 
 export function ArticlesCard(props: StandardCardProps): JSX.Element {
   const { result } = props;
   const cssClasses = builtInCssClasses;
   const ArticleCard: ArticleCardType = result.rawData;
-  // console.log(ArticleCard.c_articleCard.cTA, "Articlebtn");
-  const ArticleDescription = ArticleCard.c_articleCard.description
+  const ArticleDescription = ArticleCard?.c_articleCard?.description
     ? ArticleCard.c_articleCard.description
     : "";
-  const ArticleImageUrl = ArticleCard.c_articleCard.image.url
+  const ArticleImageUrl = ArticleCard?.c_articleCard?.image.url
     ? ArticleCard.c_articleCard.image.url
     : "";
-  // const ArticleBtn = ArticleCard.c_articleCard.cTA.label
-  //   ? ArticleCard.c_articleCard.cTA.label
-  //   : null;
-  // function limit(string?: string, limit = 0) {
-  //   return string?.substring(0, limit);
-  // }
 
-  // const greeting = limit(ArticleDescription, 200);
-
-  const [readMoreLess, setFilterValue] = useState("Show More");
+    const [readMoreLess, setFilterValue] = useState("Show More");
   const [classMoreLess, setClassValue] = useState("showMore");
 
   const myFunction = () => {

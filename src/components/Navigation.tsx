@@ -74,22 +74,25 @@ export default function Navigation({
 }: NavigationProps) {
   // Query - Starts
   const [navparmam, setNavParam] = useState("");
-  const SearchQuery: string | undefined = useSearchState((state) => state.query.input);
-  console.log(SearchQuery,"SearchQuery")
-
-  function getQueryParam(): string | null {
+  const SearchQuery: string | null = useSearchState((state) => state.query.input) ?? null;
+  function getQueryParam(): string {
     const queryString: string | undefined = window.location.search;
     const urlParams: URLSearchParams = new URLSearchParams(queryString);
     const product: string | null = urlParams.get("query");
-    return product;
+  
+    if (product !== null) {
+      return product; // Return the non-null string
+    } else {
+      return ""; // Return a default value or handle the null case
+    }
   }
+  
   
   
   // const product = urlParams.get('query');
   const answersActions = useSearchActions();
 
   useEffect(() => {
-    // console.log(getQueryParam(),"product")
     if (getQueryParam() !== null) {
       answersActions.setQuery(getQueryParam());
     } else {
@@ -124,7 +127,6 @@ export default function Navigation({
       window.location.pathname +
       "?" +
       searchParams.toString();
-    // console.log(newUrl,"newUrl");
     window.history.replaceState({}, "", newUrl);
   }
 

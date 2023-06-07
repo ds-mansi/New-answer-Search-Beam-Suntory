@@ -59,7 +59,6 @@ export function VerticalResultsDisplay(
   const resultsClassNames = classNames({
     [cssClasses.results___loading ?? ""]: isLoading,
   });
-  console.log(results, "results");
   return (
     <>
       {results &&
@@ -158,7 +157,6 @@ export default function VerticalResults(
     const alternateVerticals =
       filterVariable.length > 0
         ? filterVariable.map((results: any) => {
-            console.log(results, "results");
             return (
               <>
                 <a href={`/${results.verticalKey}`}>

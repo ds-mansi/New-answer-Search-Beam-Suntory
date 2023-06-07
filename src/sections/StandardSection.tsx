@@ -34,7 +34,6 @@ const StandardSection: SectionComponent = function (
     return null;
   }
   const cardComponent = cardConfig?.CardComponent || StandardCard;
-  console.log(results,"object")
 
   return (
     <section className={cssClasses.section} >

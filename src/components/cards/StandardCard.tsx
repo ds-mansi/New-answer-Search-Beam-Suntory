@@ -102,7 +102,6 @@ export function StandardCard(props: StandardCardProps): JSX.Element {
   function renderTitle(title: string) {
     return <div className={cssClasses.title}>{title}</div>;
   }
-  // console.log(result.name, "statdardcard");
   return (
     <div className={cssClasses.container}>
       <div className={cssClasses.header}>

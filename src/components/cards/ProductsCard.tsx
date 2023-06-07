@@ -79,21 +79,21 @@ export function ProductsCard(props: StandardCardProps): JSX.Element {
     cta : {label:string,link:string}
   }
   interface NewProductData {
-      name : string,
-      c_productCard : ProductCard
+      name ?: string,
+      c_productCard ?: ProductCard
   }
 
   const Products: NewProductData = result.rawData;
-  const productName = Products.c_productCard.heading
+  const productName = Products?.c_productCard?.heading
     ? Products.c_productCard.heading
     : ""; // Description of the Products
-  const productDescription = Products.c_productCard.description
+  const productDescription = Products?.c_productCard?.description
     ? Products.c_productCard.description
     : ""; // Description of the Products
   const productImage = Products.c_productCard
     ? Products.c_productCard.image.url
-    : "#";
-  const productBtn = Products.c_productCard.cta.label
+    : "";
+  const productBtn = Products?.c_productCard?.cta.label
     ? Products.c_productCard.cta.label
     : "Product cta";
   return (
@@ -106,7 +106,7 @@ export function ProductsCard(props: StandardCardProps): JSX.Element {
           <h4 className="font-semibold">{productName}</h4>
           <p>{productDescription}</p>
           <p>
-            <a href={Products.c_productCard.cta.link}>{productBtn}</a>
+            <a href={Products?.c_productCard?.cta.link}>{productBtn}</a>
           </p>
         </div>
       </div>
