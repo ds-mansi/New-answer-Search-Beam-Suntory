@@ -7,7 +7,6 @@ import {
   HeadConfig,
   TemplateProps,
 } from "@yext/pages";
-import { answersHeadlessConfig } from "../config/answersHeadlessConfig";
 import "../index.css";
 import {
   SearchBar,
@@ -29,13 +28,14 @@ import "../index.css";
 import Navigation from "../components/Navigation";
 import UniversalResults from "../components/UniversalResults";
 import { universalResultsConfig } from "../config/universalResultsConfig";
+import { answersHeadlessConfig } from "../config/answersHeadlessConfig";
 
 const universalResultsFilterConfig = {
-    show: true,
-  };
+  show: true,
+};
 export const getPath: GetPath<TemplateProps> = () => {
-    return "index";
-  };
+  return "index";
+};
 export const getHeadConfig: GetHeadConfig<
   TemplateRenderProps
 > = (): HeadConfig => {
@@ -46,28 +46,27 @@ export const getHeadConfig: GetHeadConfig<
   };
 };
 
-
 const searcher = provideHeadless(answersHeadlessConfig);
 
-const Product: Template<TemplateRenderProps> = () => {
+const IndexPage: Template<TemplateRenderProps> = () => {
   return (
     <>
       <SearchHeadlessProvider searcher={searcher}>
         <div className="px-4 py-8">
           <div className="mx-auto flex max-w-5xl flex-col">
-            <SearchBar />
-            <Navigation/>
+          <SearchBar placeholder="SEARCH YOUR QUERY HERE"/>
+            <Navigation />
             <DirectAnswer />
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
             <div className="product-card flex flex-wrap">
-            <UniversalResults
-              appliedFiltersConfig={universalResultsFilterConfig}
-              verticalConfigs={universalResultsConfig}
-            />
+              <UniversalResults
+                appliedFiltersConfig={universalResultsFilterConfig}
+                verticalConfigs={universalResultsConfig}
+              />
             </div>
-              <LocationBias />
+            <LocationBias />
           </div>
           <Pagination />
         </div>
@@ -76,4 +75,4 @@ const Product: Template<TemplateRenderProps> = () => {
   );
 };
 
-export default Product;
+export default IndexPage;

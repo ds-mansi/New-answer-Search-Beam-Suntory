@@ -4,9 +4,7 @@ import {
   useComposedCssClasses,
 } from "../../hooks/useComposedCssClasses";
 import { CardProps } from "../../models/cardComponent";
-// import '../../sass/style.css';
 import "../../../src/index.css";
-import { useSearchState } from "@yext/search-headless-react";
 
 export interface StandardCardConfig {
   showOrdinal?: boolean;

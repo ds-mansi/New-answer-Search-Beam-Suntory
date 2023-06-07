@@ -27,7 +27,6 @@ import {
 } from "@yext/search-headless-react";
 import "../index.css";
 import Navigation from "../components/Navigation";
-import { ProductsCard } from "../components/cards/ProductsCard";
 import { ArticlesCard } from "../components/cards/ArticlesCard";
 
 export const getPath: GetPath<TemplateProps> = () => {

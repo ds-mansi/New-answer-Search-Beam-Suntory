@@ -61,7 +61,7 @@ export function ArticlesCard(props: StandardCardProps): JSX.Element {
     ? ArticleCard.c_articleCard.image.url
     : "";
 
-    const [readMoreLess, setFilterValue] = useState("Show More");
+  const [readMoreLess, setFilterValue] = useState("Show More");
   const [classMoreLess, setClassValue] = useState("showMore");
 
   const myFunction = () => {

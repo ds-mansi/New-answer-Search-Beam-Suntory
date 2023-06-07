@@ -1,10 +1,10 @@
-import { StandardSection } from "@yext/search-ui-react";
+import StandardSection from "../sections/StandardSection";
 import { ProductsCard } from "../components/cards/ProductsCard";
 import { VerticalConfig } from "../components/UniversalResults";
 import { ArticlesCard } from "../components/cards/ArticlesCard";
 import { FaqCard } from "../components/cards/FaqCard";
 import { ProductReciepeCard } from "../components/cards/ProductReciepeCard";
-// import StandardSection from "../sections/StandardSection";
+
 export type UniversalResultsConfig = Record<string, VerticalConfig>;
 
 export const universalResultsConfig: UniversalResultsConfig = {
