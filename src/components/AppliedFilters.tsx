@@ -5,13 +5,13 @@ import {
   useSearchState,
   FiltersState,
 } from "@yext/search-headless-react";
-import { isNearFilterValue } from "../utils/filterutils";
+import { isNearFilterValue } from "./utils/filterutils";
 import {
   CompositionMethod,
   useComposedCssClasses,
 } from "../hooks/useComposedCssClasses";
 import { GroupedFilters } from "../models/groupedFilters";
-import { getGroupedAppliedFilters } from "../utils/appliedfilterutils";
+import { getGroupedAppliedFilters } from "./utils/appliedfilterutils";
 import { useRef } from "react";
 import classNames from "classnames";
 import * as React from "react";

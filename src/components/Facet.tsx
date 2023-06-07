@@ -1,10 +1,9 @@
 import {
-  useSearchUtilities,
   DisplayableFacet,
   DisplayableFacetOption,
 } from "@yext/search-headless-react";
 import { useState } from "react";
-import { useCollapse } from "react-collapsed";
+import  useCollapse  from "react-collapsed";
 import {
   CompositionMethod,
   useComposedCssClasses,
@@ -14,7 +13,6 @@ import renderCheckboxOption, {
 } from "./utils/renderCheckboxOption";
 import { useAnswersUtilities } from "@yext/answers-headless-react";
 import * as React from "react";
-// import { ReactComponent as DropdownIcon } from '../icons/chevron.svg';
 
 export type onFacetChangeFn = (
   fieldId: string,
