@@ -80,6 +80,7 @@ export function ArticlesCard(props: StandardCardProps): JSX.Element {
           <img
             src={ArticleImageUrl}
             style={{ height: "150px", margin: "auto" }}
+            alt=""
           ></img>
           <div style={{ textAlign: "center" }} className={classMoreLess}>
             <p>{ArticleDescription}</p>

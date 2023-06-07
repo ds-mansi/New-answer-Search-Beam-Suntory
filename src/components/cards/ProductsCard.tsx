@@ -100,7 +100,7 @@ export function ProductsCard(props: StandardCardProps): JSX.Element {
     <>
     <div >
       <div className={cssClasses.container}>
-        <img src={productImage} style={{height:"150px",margin:"auto"}}></img>
+        <img src={productImage} style={{height:"150px",margin:"auto"}} alt=""/>
         <div style={{textAlign:"center"}}>
           <h3 className={cssClasses.header}>{Products.name}</h3>
           <h4 className="font-semibold">{productName}</h4>

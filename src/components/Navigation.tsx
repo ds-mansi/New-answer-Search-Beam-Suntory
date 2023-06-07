@@ -225,7 +225,7 @@ export default function Navigation({
             ref={menuRef}
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <img className={cssClasses.kebabIcon} /> More
+            <img className={cssClasses.kebabIcon} alt=""/> More
           </button>
           {menuOpen && (
             <div className={cssClasses.menuContainer}>

@@ -78,7 +78,7 @@ export function ProductReciepeCard(props: StandardCardProps): JSX.Element {
 
   return (
     <>
-      <img src={allproduct?.c_recipePhoto?.url} />
+      <img src={allproduct?.c_recipePhoto?.url} alt=""/>
       <option value="product name">{allproduct.name}</option>
     </>
   );
