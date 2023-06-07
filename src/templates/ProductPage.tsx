@@ -30,7 +30,7 @@ import Navigation from "../components/Navigation";
 import { ProductsCard } from "../components/cards/ProductsCard";
 
 export const getPath: GetPath<TemplateProps> = () => {
-  return "product";
+  return "products";
 };
 
 export const getHeadConfig: GetHeadConfig<
