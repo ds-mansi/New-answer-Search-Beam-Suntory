@@ -27,10 +27,10 @@ import {
 } from "@yext/search-headless-react";
 import "../index.css";
 import Navigation from "../components/Navigation";
-import { ProductsCard } from "../components/cards/ProductsCard";
+import { FaqCard } from "../components/cards/FaqCard";
 
 export const getPath: GetPath<TemplateProps> = () => {
-  return "products";
+  return "faqs";
 };
 
 export const getHeadConfig: GetHeadConfig<
@@ -43,7 +43,7 @@ export const getHeadConfig: GetHeadConfig<
   };
 };
 
-answersHeadlessConfig.verticalKey = "products";
+answersHeadlessConfig.verticalKey = "faqs";
 const searcher = provideHeadless(answersHeadlessConfig);
 
 const Product: Template<TemplateRenderProps> = () => {
@@ -60,7 +60,7 @@ const Product: Template<TemplateRenderProps> = () => {
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
             <div className="product-card flex flex-wrap">
             <VerticalResults
-              CardComponent={ProductsCard}
+              CardComponent={FaqCard}
               displayAllOnNoResults={false}
             />
             </div>

@@ -28,9 +28,10 @@ import {
 import "../index.css";
 import Navigation from "../components/Navigation";
 import { ProductsCard } from "../components/cards/ProductsCard";
+import { ArticlesCard } from "../components/cards/ArticlesCard";
 
 export const getPath: GetPath<TemplateProps> = () => {
-  return "products";
+  return "articles";
 };
 
 export const getHeadConfig: GetHeadConfig<
@@ -43,7 +44,7 @@ export const getHeadConfig: GetHeadConfig<
   };
 };
 
-answersHeadlessConfig.verticalKey = "products";
+answersHeadlessConfig.verticalKey = "articles";
 const searcher = provideHeadless(answersHeadlessConfig);
 
 const Product: Template<TemplateRenderProps> = () => {
@@ -60,7 +61,7 @@ const Product: Template<TemplateRenderProps> = () => {
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
             <div className="product-card flex flex-wrap">
             <VerticalResults
-              CardComponent={ProductsCard}
+              CardComponent={ArticlesCard}
               displayAllOnNoResults={false}
             />
             </div>
