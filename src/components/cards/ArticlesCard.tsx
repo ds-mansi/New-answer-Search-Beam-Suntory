@@ -75,7 +75,7 @@ export function ArticlesCard(props: StandardCardProps): JSX.Element {
   };
   return (
     <>
-      <div style={{ width: "50%", marginRight: "10px" }}>
+      <div style={{ marginRight: "10px" }}>
         <div className={cssClasses.container}>
           <img
             src={ArticleImageUrl}

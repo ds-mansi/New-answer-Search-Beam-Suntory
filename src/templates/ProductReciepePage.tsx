@@ -12,7 +12,6 @@ import "../index.css";
 import {
   SearchBar,
   StandardCard,
-  VerticalResults,
   SpellCheck,
   ResultsCount,
   Pagination,
@@ -20,7 +19,7 @@ import {
   AppliedFilters,
   LocationBias,
 } from "@yext/search-ui-react";
-
+import VerticalResults from "../components/VerticalResults";
 import {
   SearchHeadlessProvider,
   provideHeadless,
@@ -31,7 +30,7 @@ import { ProductReciepeCard } from "../components/cards/ProductReciepeCard";
 import Facets from "../components/Facets";
 
 export const getPath: GetPath<TemplateProps> = () => {
-    return "product_reciepes";
+  return "product_reciepes";
 };
 
 export const getHeadConfig: GetHeadConfig<
@@ -53,20 +52,17 @@ const Product: Template<TemplateRenderProps> = () => {
       <SearchHeadlessProvider searcher={searcher}>
         <div className="px-4 py-8">
           <div className="mx-auto flex max-w-5xl flex-col">
-            <SearchBar placeholder="SEARCH YOUR QUERY HERE"/>
-            <Navigation/>
+            <SearchBar placeholder="SEARCH YOUR QUERY HERE" />
+            <Navigation />
             <DirectAnswer />
-            <Facets collapsible={true}   defaultExpanded = {false} />
+            <Facets collapsible={true} defaultExpanded={false} />
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
             <div className="product-card flex flex-wrap">
-            <VerticalResults
-              CardComponent={ProductReciepeCard}
-              displayAllOnNoResults={false}
-            />
+              <VerticalResults CardComponent={ProductReciepeCard} />
             </div>
-              <LocationBias />
+            <LocationBias />
           </div>
           <Pagination />
         </div>

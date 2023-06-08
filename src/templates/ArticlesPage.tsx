@@ -12,7 +12,6 @@ import "../index.css";
 import {
   SearchBar,
   StandardCard,
-  VerticalResults,
   SpellCheck,
   ResultsCount,
   Pagination,
@@ -28,7 +27,7 @@ import {
 import "../index.css";
 import Navigation from "../components/Navigation";
 import { ArticlesCard } from "../components/cards/ArticlesCard";
-
+import VerticalResults from "../components/VerticalResults";
 export const getPath: GetPath<TemplateProps> = () => {
   return "articles";
 };
@@ -52,19 +51,16 @@ const Product: Template<TemplateRenderProps> = () => {
       <SearchHeadlessProvider searcher={searcher}>
         <div className="px-4 py-8">
           <div className="mx-auto flex max-w-5xl flex-col">
-            <SearchBar placeholder="SEARCH YOUR QUERY HERE"/>
-            <Navigation/>
+            <SearchBar placeholder="SEARCH YOUR QUERY HERE" />
+            <Navigation />
             <DirectAnswer />
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
-            <div className="product-card flex flex-wrap">
-            <VerticalResults
-              CardComponent={ArticlesCard}
-              displayAllOnNoResults={false}
-            />
+            <div className="flex">
+              <VerticalResults CardComponent={ArticlesCard} />
             </div>
-              <LocationBias />
+            <LocationBias />
           </div>
           <Pagination />
         </div>

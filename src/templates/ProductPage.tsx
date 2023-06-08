@@ -11,8 +11,6 @@ import { answersHeadlessConfig } from "../config/answersHeadlessConfig";
 import "../index.css";
 import {
   SearchBar,
-  StandardCard,
-  VerticalResults,
   SpellCheck,
   ResultsCount,
   Pagination,
@@ -20,7 +18,7 @@ import {
   AppliedFilters,
   LocationBias,
 } from "@yext/search-ui-react";
-
+import VerticalResults from "../components/VerticalResults";
 import {
   SearchHeadlessProvider,
   provideHeadless,
@@ -52,19 +50,16 @@ const Product: Template<TemplateRenderProps> = () => {
       <SearchHeadlessProvider searcher={searcher}>
         <div className="px-4 py-8">
           <div className="mx-auto flex max-w-5xl flex-col">
-            <SearchBar placeholder="SEARCH YOUR QUERY HERE"/>
-            <Navigation/>
+            <SearchBar placeholder="SEARCH YOUR QUERY HERE" />
+            <Navigation />
             <DirectAnswer />
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
-            <div className="product-card flex flex-wrap">
-            <VerticalResults
-              CardComponent={ProductsCard}
-              displayAllOnNoResults={false}
-            />
+            <div className="flex flex-wrap " >
+              <VerticalResults CardComponent={ProductsCard} />
             </div>
-              <LocationBias />
+            <LocationBias />
           </div>
           <Pagination />
         </div>

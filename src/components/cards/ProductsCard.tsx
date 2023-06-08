@@ -5,7 +5,7 @@ import {
 } from "../../hooks/useComposedCssClasses";
 import { CardProps } from "../../models/cardComponent";
 // import '../../sass/style.css';
-import {productData} from "../../types/productTypes"
+import { productData } from "../../types/productTypes";
 export interface StandardCardConfig {
   showOrdinal?: boolean;
 }
@@ -46,20 +46,13 @@ const builtInCssClasses: StandardCardCssClasses = {
   ProductPriceClass: "ProductPrice flex flex-row",
 };
 
-// interface CtaData {
-//   label: string;
-//   link: string;
-//   linkType: string;
-// }
-
 /**
  * This Component renders the base result card.
  *
  * @param props - An object containing the result itself.
  */
 export function ProductsCard(props: StandardCardProps): JSX.Element {
-  const {  result, customCssClasses, cssCompositionMethod } =
-    props;
+  const { result, customCssClasses, cssCompositionMethod } = props;
   const cssClasses = useComposedCssClasses(
     builtInCssClasses,
     customCssClasses,
@@ -73,14 +66,14 @@ export function ProductsCard(props: StandardCardProps): JSX.Element {
    * @returns The variable containing the truncated Description.
    */
   interface ProductCard {
-    heading : string,
-    description : string,
-    image : {url:string},
-    cta : {label:string,link:string}
+    heading: string;
+    description: string;
+    image: { url: string };
+    cta: { label: string; link: string };
   }
   interface NewProductData {
-      name ?: string,
-      c_productCard ?: ProductCard
+    name?: string;
+    c_productCard?: ProductCard;
   }
 
   const Products: NewProductData = result.rawData;
@@ -95,21 +88,25 @@ export function ProductsCard(props: StandardCardProps): JSX.Element {
     : "";
   const productBtn = Products?.c_productCard?.cta.label
     ? Products.c_productCard.cta.label
-    : "Product cta";
+    : "";
   return (
     <>
-    <div >
-      <div className={cssClasses.container}>
-        <img src={productImage} style={{height:"150px",margin:"auto"}} alt=""/>
-        <div style={{textAlign:"center"}}>
-          <h3 className={cssClasses.header}>{Products.name}</h3>
-          <h4 className="font-semibold">{productName}</h4>
-          <p>{productDescription}</p>
-          <p>
-            <a href={Products?.c_productCard?.cta.link}>{productBtn}</a>
-          </p>
+      <div>
+        <div className={cssClasses.container}>
+          <img
+            src={productImage}
+            style={{ height: "150px", margin: "auto" }}
+            alt=""
+          />
+          <div style={{ textAlign: "center" }}>
+            <h3 className={cssClasses.header}>{Products.name}</h3>
+            <h4 className="font-semibold">{productName}</h4>
+            <p>{productDescription}</p>
+            <p>
+              <a href={Products?.c_productCard?.cta.link}>{productBtn}</a>
+            </p>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );

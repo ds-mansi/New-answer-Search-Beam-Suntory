@@ -11,7 +11,7 @@ import {
 import renderCheckboxOption, {
   CheckboxOptionCssClasses,
 } from "./utils/renderCheckboxOption";
-import { useAnswersUtilities } from "@yext/answers-headless-react";
+import { useSearchUtilities } from "@yext/search-headless-react";
 import * as React from "react";
 
 export type onFacetChangeFn = (
@@ -66,7 +66,7 @@ export default function Facet(props: FacetProps): JSX.Element {
     customCssclasses,
     cssCompositionMethod
   );
-  const answersUtilities = useAnswersUtilities();
+  const answersUtilities = useSearchUtilities();
   const hasSelectedFacet = !!facet.options.find((o) => o.selected);
   const [filterValue, setFilterValue] = useState("");
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({

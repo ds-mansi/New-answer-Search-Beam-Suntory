@@ -143,8 +143,11 @@ export default function VerticalResults(
   const aleternateVerticals = useSearchState(
     (state) => state.vertical.noResults?.alternativeVerticals
   );
+  console.log(aleternateVerticals,"aleternateVerticals")
   let results = verticalResults;
   let resultsCount = verticalResultsCount;
+
+
   if (verticalResults.length === 0 && displayAllOnNoResults) {
     results = allResultsForVertical;
     resultsCount = allResultsCountForVertical;
@@ -153,10 +156,11 @@ export default function VerticalResults(
       aleternateVerticals?.filter(
         (filtredResulta) => filtredResulta.resultsCount > 0
       ) || [];
-
-    const alternateVerticals =
+      console.log(filterVariable,"Results");
+      const alternateVerticals =
       filterVariable.length > 0
         ? filterVariable.map((results: any) => {
+          
             return (
               <>
                 <a href={`/${results.verticalKey}`}>
@@ -166,7 +170,7 @@ export default function VerticalResults(
             );
           })
         : null;
-
+        console.log(filterVariable.length,"This");
     return (
       <div className="noResultFound">
         {filterVariable.length > 0 ? (
@@ -187,7 +191,7 @@ export default function VerticalResults(
         results={results}
         isLoading={isLoading}
         {...otherProps}
-      />
+      />testing
       {allowPagination && (
         <Pagination
           numResults={resultsCount}
