@@ -124,6 +124,7 @@ function renderVerticalSections(props: VerticalSectionsProps): JSX.Element {
           };
 
           return (
+            <>
             <SectionComponent
               results={results}
               verticalKey={verticalKey}
@@ -141,6 +142,7 @@ function renderVerticalSections(props: VerticalSectionsProps): JSX.Element {
               cardConfig={verticalConfig.cardConfig}
               key={verticalKey}
             />
+            </>
           );
         })}
     </>

@@ -56,9 +56,7 @@ const Product: Template<TemplateRenderProps> = () => {
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
-            <div className="flex flex-wrap " >
-              <VerticalResults CardComponent={ProductsCard} />
-            </div>
+            <VerticalResults CardComponent={ProductsCard} />
             <LocationBias />
           </div>
           <Pagination />

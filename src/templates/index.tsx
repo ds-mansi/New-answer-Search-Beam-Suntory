@@ -60,7 +60,7 @@ const IndexPage: Template<TemplateRenderProps> = () => {
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
-            <div className="product-card flex flex-wrap">
+            <div className="flex flex-wrap">
               <UniversalResults
                 appliedFiltersConfig={universalResultsFilterConfig}
                 verticalConfigs={universalResultsConfig}

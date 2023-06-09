@@ -59,12 +59,11 @@ export function ProductReciepeCard(props: StandardCardProps): JSX.Element {
     cssCompositionMethod
   );
 
-
   interface ProductReceipeCard {
     url: string;
   }
   interface ReceipeCard {
-    name?: string ;
+    name?: string;
     c_recipePhoto?: ProductReceipeCard;
   }
   /**
@@ -78,8 +77,16 @@ export function ProductReciepeCard(props: StandardCardProps): JSX.Element {
 
   return (
     <>
-      <img src={allproduct?.c_recipePhoto?.url} alt=""/>
-      <option value="product name">{allproduct.name}</option>
+      <div style={{ position: "relative" }}>
+        <img
+          src={allproduct?.c_recipePhoto?.url}
+          alt=""
+          className="rounded-tl-3xl rounded-br-3xl"
+        />
+        <div className="absolute bottom-0	bg-[#B12328] text-white px-7 py-1 mb-5 rounded-tr-xl uppercase">
+          <option value="product name">{allproduct.name}</option>
+        </div>
+      </div>
     </>
   );
 }

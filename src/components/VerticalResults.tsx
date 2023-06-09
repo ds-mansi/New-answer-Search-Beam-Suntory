@@ -65,6 +65,7 @@ export function VerticalResultsDisplay(
         results.map((i) => {
           return (
             <>
+            <div>
               {i.entityType === "faq" ? (
                 <div className={resultsClassNames}>
                   {renderResult(CardComponent, cardConfig, i)}
@@ -74,6 +75,7 @@ export function VerticalResultsDisplay(
                   {renderResult(CardComponent, cardConfig, i)}
                 </div>
               )}
+              </div>
             </>
           );
         })}

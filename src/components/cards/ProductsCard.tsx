@@ -32,7 +32,7 @@ export interface StandardCardCssClasses {
 
 const builtInCssClasses: StandardCardCssClasses = {
   container:
-    "justify-between border rounded-lg mb-4 p-4 shadow-sm ProductVerticalContainer",
+    "justify-between border rounded-lg mb-4 p-4 w-1/6 shadow-sm ProductVerticalContainer",
   header: "text-grey-800 ProductHeaderClass text-2xl font-bold",
   body: "flex justify-end pt-2.5",
   descriptionContainer: "w-full text-base",
@@ -91,21 +91,16 @@ export function ProductsCard(props: StandardCardProps): JSX.Element {
     : "";
   return (
     <>
-      <div>
-        <div className={cssClasses.container}>
-          <img
-            src={productImage}
-            style={{ height: "150px", margin: "auto" }}
-            alt=""
-          />
-          <div style={{ textAlign: "center" }}>
-            <h3 className={cssClasses.header}>{Products.name}</h3>
-            <h4 className="font-semibold">{productName}</h4>
-            <p>{productDescription}</p>
-            <p>
-              <a href={Products?.c_productCard?.cta.link}>{productBtn}</a>
-            </p>
-          </div>
+      <div className={cssClasses.container}>
+        <img
+          src={productImage}
+          style={{ height: "150px", margin: "auto", position: "relative" }}
+          alt=""
+        />
+        <div className="absolute font-semibold bg-[#B12328] text-white text-xs px-3 py-1 mb-5 rounded-tr-xl uppercase">
+          <p className="">
+            <a href={Products?.c_productCard?.cta.link}>{productBtn}</a>
+          </p>
         </div>
       </div>
     </>

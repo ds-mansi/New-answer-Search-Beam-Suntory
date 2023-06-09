@@ -4,8 +4,6 @@ import {
   useComposedCssClasses,
 } from "../../hooks/useComposedCssClasses";
 import { CardProps } from "../../models/cardComponent";
-// import '../../sass/style.css';
-import { productData } from "../../types/productTypes";
 export interface StandardCardConfig {
   showOrdinal?: boolean;
 }
@@ -31,8 +29,7 @@ export interface StandardCardCssClasses {
 }
 
 const builtInCssClasses: StandardCardCssClasses = {
-  container:
-    "justify-between border rounded-lg mb-4 p-4 shadow-sm ProductVerticalContainer",
+  container: "justify-between border rounded-lg mb-4 p-4 shadow-sm",
   header: "text-grey-800 ProductHeaderClass text-2xl font-bold",
   body: "flex justify-end pt-2.5",
   descriptionContainer: "w-full text-base",
@@ -76,30 +73,36 @@ export function BlogsCard(props: StandardCardProps): JSX.Element {
 
   const Blogs: NewBlogData = result.rawData;
 
-  const blogName = Blogs?.name ? Blogs.name : ""; // Name of the Blog
+  //   const blogName = Blogs?.name ? Blogs.name : ""; // Name of the Blog
   const blogHeadline = Blogs?.headline ? Blogs.headline : ""; // Headline of the Products
   const blogDesciption = Blogs?.description ? Blogs.description : ""; // description of the Products
 
   const blogImage = Blogs?.c_blogImage?.url ? Blogs.c_blogImage.url : "";
   const blogBtn = Blogs?.c_button?.label ? Blogs.c_button.label : "";
- 
+
   return (
     <>
-      <div>
-        <div className={cssClasses.container}>
-          <img
-            src={blogImage}
-            style={{ height: "150px", margin: "auto" }}
-            alt=""
-          />
-          <div style={{ textAlign: "center" }}>
-            <h3 className={cssClasses.header}>{blogName}</h3>
-            <h4 className="font-semibold">{blogHeadline}</h4>
-            <p>{blogDesciption}</p>
-            <p>
-              <a href={Blogs?.c_button?.link}>{blogBtn}</a>
-            </p>
-          </div>
+      <div className={cssClasses.container} style={{ width: "34%" }}>
+        <img
+          src={blogImage}
+          style={{
+            height: "150px",
+            margin: "auto",
+            width: "100%",
+            marginBottom: "15px",
+          }}
+          alt=""
+        />
+        <div>
+          {/* <h3 className={cssClasses.header} style={{color:"#B12328"}}>{blogName}</h3> */}
+          <h4 className="font-semibold text-[#B12328] mb-2">{blogHeadline}</h4>
+          <p className="mb-2">{blogDesciption}</p>
+          <p
+           
+            className="border border-[#B12328] w-2/6 text-center text-[#B12328] "
+          >
+            <a href={Blogs?.c_button?.link}>{blogBtn}</a>
+          </p>
         </div>
       </div>
     </>
