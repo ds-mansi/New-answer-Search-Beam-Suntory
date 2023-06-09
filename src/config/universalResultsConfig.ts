@@ -4,6 +4,7 @@ import { VerticalConfig } from "../components/UniversalResults";
 import { ArticlesCard } from "../components/cards/ArticlesCard";
 import { FaqCard } from "../components/cards/FaqCard";
 import { ProductReciepeCard } from "../components/cards/ProductReciepeCard";
+import {BlogsCard} from "../components/cards/BlogsCard";
 
 export type UniversalResultsConfig = Record<string, VerticalConfig>;
 
@@ -41,6 +42,15 @@ export const universalResultsConfig: UniversalResultsConfig = {
     viewAllButton: true,
     cardConfig: {
       CardComponent: ProductReciepeCard,
+      showOrdinal: false,
+    },
+  },
+  blogs: {
+    SectionComponent: StandardSection,
+    label: "Blogs",
+    viewAllButton: true,
+    cardConfig: {
+      CardComponent: BlogsCard,
       showOrdinal: false,
     },
   },
