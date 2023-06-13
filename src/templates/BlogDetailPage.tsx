@@ -48,7 +48,7 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.id;
+  return document.slug;
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
