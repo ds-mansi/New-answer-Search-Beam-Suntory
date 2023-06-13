@@ -4,8 +4,6 @@ import {
   useComposedCssClasses,
 } from "../../hooks/useComposedCssClasses";
 import { CardProps } from "../../models/cardComponent";
-// import '../../sass/style.css';
-import { productData } from "../../types/productTypes";
 export interface StandardCardConfig {
   showOrdinal?: boolean;
 }
@@ -97,7 +95,7 @@ export function ProductsCard(props: StandardCardProps): JSX.Element {
           style={{ height: "150px", margin: "auto", position: "relative" }}
           alt=""
         />
-        <div className="absolute font-semibold bg-[#B12328] text-white text-xs px-3 py-1 mb-5 rounded-tr-xl uppercase">
+        <div className="absolute font-semibold bg-[#FBC13D] text-white text-xs px-3 py-1 mb-5 rounded-tr-xl uppercase">
           <p className="">
             <a href={Products?.c_productCard?.cta.link}>{productBtn}</a>
           </p>

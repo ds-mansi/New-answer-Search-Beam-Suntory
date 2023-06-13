@@ -11,7 +11,6 @@ import { answersHeadlessConfig } from "../config/answersHeadlessConfig";
 import "../index.css";
 import {
   SearchBar,
-  StandardCard,
   SpellCheck,
   ResultsCount,
   Pagination,

@@ -83,7 +83,7 @@ export function ProductReciepeCard(props: StandardCardProps): JSX.Element {
           alt=""
           className="rounded-tl-3xl rounded-br-3xl"
         />
-        <div className="absolute bottom-0	bg-[#B12328] text-white px-7 py-1 mb-5 rounded-tr-xl uppercase">
+        <div className="absolute bottom-0	bg-[#FBC13D] text-white px-7 py-1 mb-5 rounded-tr-xl uppercase">
           <option value="product name">{allproduct.name}</option>
         </div>
       </div>

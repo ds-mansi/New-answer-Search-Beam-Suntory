@@ -44,7 +44,7 @@ export const getHeadConfig: GetHeadConfig<
 answersHeadlessConfig.verticalKey = "blogs";
 const searcher = provideHeadless(answersHeadlessConfig);
 
-const Product: Template<TemplateRenderProps> = () => {
+const Blogs: Template<TemplateRenderProps> = () => {
   return (
     <>
       <SearchHeadlessProvider searcher={searcher}>
@@ -66,4 +66,4 @@ const Product: Template<TemplateRenderProps> = () => {
   );
 };
 
-export default Product;
+export default Blogs;

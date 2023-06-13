@@ -146,3 +146,18 @@
 .receipe-card div{
   width: 33.33%;
 }
+.blogs-card h3{
+ color: #B12328;
+ font-weight: 500;
+ margin-bottom: 10px;
+}
+
+.blogs-card a{
+  color: #B12328;
+ border: 1px solid #B12328;
+ width: 34% !important;
+ padding: 2px 20px 2px 20px;
+ }
+.blogs-card p{
+  margin-bottom: 10px;
+}

@@ -48,7 +48,7 @@ export interface AppliedFiltersProps {
   hiddenFields?: Array<string>;
   labelText?: string;
   /**
-   * A mapping of static filter fieldIds to their displayed group labels.
+   * A mapping of static  fieldIds to their displayed group labels.
    */
   staticFiltersGroupLabels?: Record<string, string>;
   appliedQueryFilters?: AppliedQueryFilter[];

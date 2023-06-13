@@ -10,8 +10,6 @@ import {
 import "../index.css";
 import {
   SearchBar,
-  StandardCard,
-  VerticalResults,
   SpellCheck,
   ResultsCount,
   Pagination,
@@ -54,7 +52,7 @@ const IndexPage: Template<TemplateRenderProps> = () => {
       <SearchHeadlessProvider searcher={searcher}>
         <div className="px-4 py-8">
           <div className="mx-auto flex max-w-5xl flex-col">
-          <SearchBar placeholder="SEARCH YOUR QUERY HERE"/>
+            <SearchBar placeholder="SEARCH YOUR QUERY HERE" />
             <Navigation />
             <DirectAnswer />
             <SpellCheck />

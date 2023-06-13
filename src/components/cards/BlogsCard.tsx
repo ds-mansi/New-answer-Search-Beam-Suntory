@@ -4,6 +4,7 @@ import {
   useComposedCssClasses,
 } from "../../hooks/useComposedCssClasses";
 import { CardProps } from "../../models/cardComponent";
+import RtfConverter from "@yext/rtf-converter";
 export interface StandardCardConfig {
   showOrdinal?: boolean;
 }
@@ -69,16 +70,13 @@ export function BlogsCard(props: StandardCardProps): JSX.Element {
     description?: string;
     c_blogImage?: { url: string | undefined };
     c_button?: { label: string; link: string };
+    richTextDescription: string;
   }
 
-  const Blogs: NewBlogData = result.rawData;
+  const Blogs: NewBlogData = result.rawData as unknown as NewBlogData;
 
-  //   const blogName = Blogs?.name ? Blogs.name : ""; // Name of the Blog
-  const blogHeadline = Blogs?.headline ? Blogs.headline : ""; // Headline of the Products
-  const blogDesciption = Blogs?.description ? Blogs.description : ""; // description of the Products
-
+  console.log(typeof Blogs.richTextDescription, "blogs");
   const blogImage = Blogs?.c_blogImage?.url ? Blogs.c_blogImage.url : "";
-  const blogBtn = Blogs?.c_button?.label ? Blogs.c_button.label : "";
 
   return (
     <>
@@ -93,17 +91,14 @@ export function BlogsCard(props: StandardCardProps): JSX.Element {
           }}
           alt=""
         />
-        <div>
-          {/* <h3 className={cssClasses.header} style={{color:"#B12328"}}>{blogName}</h3> */}
-          <h4 className="font-semibold text-[#B12328] mb-2">{blogHeadline}</h4>
-          <p className="mb-2">{blogDesciption}</p>
-          <p
-           
-            className="border border-[#B12328] w-2/6 text-center text-[#B12328] "
-          >
-            <a href={Blogs?.c_button?.link}>{blogBtn}</a>
-          </p>
-        </div>
+        <div
+          className="blogs-card"
+          dangerouslySetInnerHTML={{
+            __html: Blogs?.richTextDescription
+              ? RtfConverter.toHTML(Blogs?.richTextDescription)
+              : "",
+          }}
+        ></div>
       </div>
     </>
   );
