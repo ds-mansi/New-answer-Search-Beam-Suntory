@@ -26,6 +26,8 @@ import {
 import "../index.css";
 import Navigation from "../components/Navigation";
 import { BlogsCard } from "../components/cards/BlogsCard";
+import Footer from "../components/Common/Footer";
+import Header from "../components/Common/Header";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return "blogs";
@@ -44,9 +46,10 @@ export const getHeadConfig: GetHeadConfig<
 answersHeadlessConfig.verticalKey = "blogs";
 const searcher = provideHeadless(answersHeadlessConfig);
 
-const Blogs: Template<TemplateRenderProps> = () => {
+const Blogs: Template<TemplateRenderProps> = (document) => {
   return (
     <>
+    <Header props={document.document._site}/>
       <SearchHeadlessProvider searcher={searcher}>
         <div className="px-4 py-8">
           <div className="mx-auto flex max-w-5xl flex-col">
@@ -62,6 +65,7 @@ const Blogs: Template<TemplateRenderProps> = () => {
           <Pagination />
         </div>
       </SearchHeadlessProvider>
+      <Footer props={document.document._site}/>
     </>
   );
 };

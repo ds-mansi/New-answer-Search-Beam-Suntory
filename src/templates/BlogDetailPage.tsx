@@ -12,7 +12,8 @@ import {
   HeadConfig,
   GetPath,
 } from "@yext/pages";
-
+import Header from "../components/Common/Header";
+import Footer from "../components/Common/Footer";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -22,6 +23,7 @@ export const config: TemplateConfig = {
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
+     
       "name",
       "id",
       "slug",
@@ -182,8 +184,15 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 // };
+// Breadcrumb
+// const  searchBreadCrumb1 = <img src={}/>
+// const  searchBreadCrumb2 = '>'
+// const  searchBreadCrumb3 = 'Search'
+
+
 
 const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
+  const {_site}=document
   console.log(document, "document");
   const bannerImage = document?.c_banner?.bannerImage.url
     ? document.c_banner.bannerImage.url
@@ -241,6 +250,7 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
   );
   return (
     <>
+    <Header props={_site}/>
       <div>
         <div className="relative ">
           <img src={bannerImage} alt="" />
@@ -285,6 +295,7 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
           </div>
         </div>
       </div>
+      <Footer props={_site}/>
     </>
   );
 };

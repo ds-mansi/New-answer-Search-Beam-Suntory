@@ -1,0 +1,24 @@
+{
+    "$id": "global-data",
+    "filter": {
+      "entityIds": ["global-data"] 
+    },
+    "source": "knowledgeGraph",
+    "fields": [
+      "name",
+      "c_header",
+      "c_headerUpper",
+      "c_lowerHeader",
+      "c_footerImage",
+     "c_socialIcons",
+     "c_footerList",
+     "c_footerTandc",
+     "c_footerListing2",
+     "c_footerDrinkImage"
+    ],
+    "localization": {
+      "locales": ["en"],
+      "primary": false
+    }
+  }
+  

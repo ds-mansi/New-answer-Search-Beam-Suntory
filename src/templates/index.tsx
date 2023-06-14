@@ -27,6 +27,8 @@ import Navigation from "../components/Navigation";
 import UniversalResults from "../components/UniversalResults";
 import { universalResultsConfig } from "../config/universalResultsConfig";
 import { answersHeadlessConfig } from "../config/answersHeadlessConfig";
+import Header from "../components/Common/Header";
+import Footer from "../components/Common/Footer";
 
 const universalResultsFilterConfig = {
   show: true,
@@ -46,9 +48,10 @@ export const getHeadConfig: GetHeadConfig<
 
 const searcher = provideHeadless(answersHeadlessConfig);
 
-const IndexPage: Template<TemplateRenderProps> = () => {
+const IndexPage: Template<TemplateRenderProps> = (document) => {
   return (
     <>
+      <Header props={document.document._site} />
       <SearchHeadlessProvider searcher={searcher}>
         <div className="px-4 py-8">
           <div className="mx-auto flex max-w-5xl flex-col">
@@ -69,6 +72,7 @@ const IndexPage: Template<TemplateRenderProps> = () => {
           <Pagination />
         </div>
       </SearchHeadlessProvider>
+      <Footer props={document.document._site} />
     </>
   );
 };

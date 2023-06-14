@@ -26,6 +26,8 @@ import {
 import "../index.css";
 import Navigation from "../components/Navigation";
 import { ProductsCard } from "../components/cards/ProductsCard";
+import Header from "../components/Common/Header";
+import Footer from "../components/Common/Footer";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return "products";
@@ -44,9 +46,10 @@ export const getHeadConfig: GetHeadConfig<
 answersHeadlessConfig.verticalKey = "products";
 const searcher = provideHeadless(answersHeadlessConfig);
 
-const Product: Template<TemplateRenderProps> = () => {
+const Product: Template<TemplateRenderProps> = (document) => {
   return (
     <>
+    <Header props={document.document._site}/>
       <SearchHeadlessProvider searcher={searcher}>
         <div className="px-4 py-8">
           <div className="mx-auto flex max-w-5xl flex-col">
@@ -62,6 +65,7 @@ const Product: Template<TemplateRenderProps> = () => {
           <Pagination />
         </div>
       </SearchHeadlessProvider>
+      <Footer props={document.document._site}/>
     </>
   );
 };
