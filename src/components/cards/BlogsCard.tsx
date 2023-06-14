@@ -74,8 +74,6 @@ export function BlogsCard(props: StandardCardProps): JSX.Element {
   }
 
   const Blogs: NewBlogData = result.rawData as unknown as NewBlogData;
-
-  console.log(typeof Blogs.richTextDescription, "blogs");
   const blogImage = Blogs?.c_blogImage?.url ? Blogs.c_blogImage.url : "";
 
   return (

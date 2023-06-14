@@ -45,7 +45,6 @@ export interface Type {
 }
 
 const Header = (headprops: Type) => {
-    console.log(headprops,"headprops")
 
     const Logo = headprops?.props?.c_header?.logo?.url
       ? headprops.props.c_header.logo.url

@@ -45,13 +45,4 @@ export const universalResultsConfig: UniversalResultsConfig = {
       showOrdinal: false,
     },
   },
-  articles: {
-    SectionComponent: StandardSection,
-    label: "Articles",
-    viewAllButton: true,
-    cardConfig: {
-      CardComponent: ArticlesCard,
-      showOrdinal: false,
-    },
-  },
 };

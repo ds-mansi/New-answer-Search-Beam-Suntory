@@ -14,6 +14,9 @@ import {
 } from "@yext/pages";
 import Header from "../components/Common/Header";
 import Footer from "../components/Common/Footer";
+import {SeachIcon} from "../images/seachicon.png"
+
+
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -23,7 +26,6 @@ export const config: TemplateConfig = {
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
-     
       "name",
       "id",
       "slug",
@@ -184,16 +186,9 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 // };
-// Breadcrumb
-// const  searchBreadCrumb1 = <img src={}/>
-// const  searchBreadCrumb2 = '>'
-// const  searchBreadCrumb3 = 'Search'
-
-
 
 const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
-  const {_site}=document
-  console.log(document, "document");
+  const { _site } = document;
   const bannerImage = document?.c_banner?.bannerImage.url
     ? document.c_banner.bannerImage.url
     : "";
@@ -248,11 +243,20 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
       );
     }
   );
+
+  // const breadCrumb1 = <img src={SeachIcon} />;
+  // const breadCrumb2 = ">";
+  // // const breadCrumb3 = { name };
   return (
     <>
-    <Header props={_site}/>
+      <Header props={_site} />
       <div>
         <div className="relative ">
+        <ol className="breadcrumb">
+         <li className="breadcrumb-item"> <a href="#">Home     </a></li>
+         <li className="breadcrumb-item"> <a href="https://master-restfully--potential--katydid-sbx-pgsdemo-com.sbx.preview.pagescdn.com/index?query="> Search </a></li>
+         <li className="breadcrumb-item"> <a href="#"> {document.name}  </a></li>
+     </ol>
           <img src={bannerImage} alt="" />
           <div className="absolute inset-y-0 pt-7 pl-3 text-white w-8/12">
             <h2 className="font-bold">{bannerHead}</h2>
@@ -272,30 +276,38 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
               height: "100%",
             }}
           >
-            <div style={{ fontWeight: "bold", fontSize: "5rem" ,color:"#B1232B"}}>
+            <div
+              style={{ fontWeight: "bold", fontSize: "5rem", color: "#B1232B" }}
+            >
               <h2>{heroHead1}</h2>
               <h2>{heroHead2}</h2>
             </div>
-            <p style={{width:"59%",color:"#B1232B"}}>{heroDesc}</p>
+            <p style={{ width: "59%", color: "#B1232B" }}>{heroDesc}</p>
           </div>
         </div>
         <div style={{ paddingTop: "4.5rem", textAlign: "center" }}>
           <h3 className="font-bold text-base text-[#B1232B]	">{aboutHead}</h3>
           <p className="pt-5">{aboutDesc}</p>
         </div>
-        <div className="flex h-full" style={{paddingTop:"4rem"}}>
-          <img src={aboutImg} alt="" style={{width:"35%",paddingRight:"5rem"}}/>
+        <div className="flex h-full" style={{ paddingTop: "4rem" }}>
+          <img
+            src={aboutImg}
+            alt=""
+            style={{ width: "35%", paddingRight: "5rem" }}
+          />
           <div>
             <h3 className="font-bold text-xl">{aboutImgHead}</h3>
             <p>{aboutImgDesc}</p>
-            <div className="pt-4"> 
-            <div className="flex text-[#B1232B] font-bold text-2xl	pr-3">{aboutImgNumb}</div>
-            <div className="flex">{aboutImgNumbDesc}</div>
+            <div className="pt-4">
+              <div className="flex text-[#B1232B] font-bold text-2xl	pr-3">
+                {aboutImgNumb}
+              </div>
+              <div className="flex">{aboutImgNumbDesc}</div>
             </div>
           </div>
         </div>
       </div>
-      <Footer props={_site}/>
+      <Footer props={_site} />
     </>
   );
 };

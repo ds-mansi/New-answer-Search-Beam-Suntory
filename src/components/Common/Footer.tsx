@@ -2,7 +2,6 @@ import * as React from "react";
 import { Link, SocialIcon, Type } from "./Header";
 
 const Footer = (footerprops: Type) => {
-  console.log(footerprops, "footer");
 
   const footerImage = footerprops?.props?.c_footerImage.url
     ? footerprops.props.c_footerImage.url
