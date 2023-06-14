@@ -1,14 +1,15 @@
 import * as React from "react";
+import { Image, Link } from "../../types/type";
 
-export interface Image {
-  url: string;
-  height: number;
-  width: number;
-}
-export interface Link {
-  label: string;
-  link: string;
-}
+// export interface Image {
+//   url: string;
+//   height: number;
+//   width: number;
+// }
+// export interface Link {
+//   label: string;
+//   link: string;
+// }
 
 export interface Header {
   logo: Image;
@@ -45,6 +46,7 @@ export interface Type {
 }
 
 const Header = (headprops: Type) => {
+
 
     const Logo = headprops?.props?.c_header?.logo?.url
       ? headprops.props.c_header.logo.url

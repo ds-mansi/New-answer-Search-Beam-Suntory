@@ -14,8 +14,19 @@ import {
 } from "@yext/pages";
 import Header from "../components/Common/Header";
 import Footer from "../components/Common/Footer";
-import {SeachIcon} from "../images/seachicon.png"
+import { Image, Link } from "../types/type";
 
+// export interface articletype{
+
+// }
+
+export interface TopArticleType {
+  articleButton: Link;
+  articleDesc: string;
+  articleHead: string;
+  articleImage: Image;
+  articleKeywords: string[];
+}
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -32,6 +43,7 @@ export const config: TemplateConfig = {
       "c_banner",
       "c_heroSection",
       "c_aboutSection",
+      "c_topArticles",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -188,6 +200,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 // };
 
 const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
+  console.log(document, "doc");
   const { _site } = document;
   const bannerImage = document?.c_banner?.bannerImage.url
     ? document.c_banner.bannerImage.url
@@ -244,19 +257,41 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
     }
   );
 
-  // const breadCrumb1 = <img src={SeachIcon} />;
-  // const breadCrumb2 = ">";
-  // // const breadCrumb3 = { name };
+  const TopArticle = document?.c_topArticles?.map((a: TopArticleType) => {
+    console.log(a, "abc");
+    return (
+      <>
+        <div>
+          <img src={a?.articleImage?.url} />
+          <h2>{a?.articleHead}</h2>
+          <p>{a.articleDesc}</p>
+          <ul>
+            <li>{a.articleKeywords}</li>
+          </ul>
+          <a href={a.articleButton.link}>{a.articleButton.label}</a>
+        </div>
+      </>
+    );
+  });
   return (
     <>
       <Header props={_site} />
       <div>
         <div className="relative ">
-        <ol className="breadcrumb">
-         <li className="breadcrumb-item"> <a href="#">Home     </a></li>
-         <li className="breadcrumb-item"> <a href="https://master-restfully--potential--katydid-sbx-pgsdemo-com.sbx.preview.pagescdn.com/index?query="> Search </a></li>
-         <li className="breadcrumb-item"> <a href="#"> {document.name}  </a></li>
-     </ol>
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item">
+              {" "}
+              <a href="#">Home </a>
+            </li>
+            <li className="breadcrumb-item">
+              {" "}
+              <a href="https://master-restfully--potential--katydid-sbx-pgsdemo-com.sbx.preview.pagescdn.com/index?query=">
+                {" "}
+                Search{" "}
+              </a>
+            </li>
+            <li className="breadcrumb-item"> {document.name} </li>
+          </ol>
           <img src={bannerImage} alt="" />
           <div className="absolute inset-y-0 pt-7 pl-3 text-white w-8/12">
             <h2 className="font-bold">{bannerHead}</h2>
@@ -307,6 +342,9 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
           </div>
         </div>
       </div>
+      <div>
+        <h2>Top Articles</h2>
+      <div className="flex">{TopArticle}</div></div>
       <Footer props={_site} />
     </>
   );
