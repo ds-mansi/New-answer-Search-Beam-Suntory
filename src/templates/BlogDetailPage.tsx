@@ -261,14 +261,23 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
     console.log(a, "abc");
     return (
       <>
-        <div>
+        <div style={{ maxWidth: "100%" }}>
           <img src={a?.articleImage?.url} />
-          <h2>{a?.articleHead}</h2>
-          <p>{a.articleDesc}</p>
-          <ul>
+          <h2 style={{fontWeight:'bold',color:"#B12328",padding:"5px 0px 5px 0px"}}>{a?.articleHead}</h2>
+          <p style={{padding:"5px 0px 5px 0px"}}>{a.articleDesc}</p>
+          <ul className="pb-5 pr-2">
             <li>{a.articleKeywords}</li>
           </ul>
-          <a href={a.articleButton.link}>{a.articleButton.label}</a>
+          <a
+            href={a.articleButton.link}
+            style={{
+              border: "1px solid black",
+              borderRadius: "5px",
+              padding: "5px",
+            }}
+          >
+            {a.articleButton.label}
+          </a>
         </div>
       </>
     );
@@ -277,22 +286,21 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
     <>
       <Header props={_site} />
       <div>
-      <ol className="breadcrumb">
-            <li className="breadcrumb-item">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            {" "}
+            <a href="#">Home </a>
+          </li>
+          <li className="breadcrumb-item">
+            {" "}
+            <a href="https://master-restfully--potential--katydid-sbx-pgsdemo-com.sbx.preview.pagescdn.com/index?query=">
               {" "}
-              <a href="#">Home </a>
-            </li>
-            <li className="breadcrumb-item">
-              {" "}
-              <a href="https://master-restfully--potential--katydid-sbx-pgsdemo-com.sbx.preview.pagescdn.com/index?query=">
-                {" "}
-                Search{" "}
-              </a>
-            </li>
-            <li className="breadcrumb-item"> {document.name} </li>
-          </ol>
+              Search{" "}
+            </a>
+          </li>
+          <li className="breadcrumb-item"> {document.name} </li>
+        </ol>
         <div className="relative ">
-          
           <img src={bannerImage} alt="" />
           <div className="absolute inset-y-0 pl-3 text-white w-8/12">
             <h2 className="font-bold pt-2 text-2xl 	">{bannerHead}</h2>
@@ -303,7 +311,12 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
           <img
             src={heroImage}
             alt=""
-            style={{ float: "right", width: "30%",marginRight:"4rem",marginTop:"2rem" }}
+            style={{
+              float: "right",
+              width: "30%",
+              marginRight: "4rem",
+              marginTop: "2rem",
+            }}
           />
           <div
             style={{
@@ -318,21 +331,26 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
               <h2>{heroHead1}</h2>
               <h2>{heroHead2}</h2>
             </div>
-            <p style={{ width: "59%"}}>{heroDesc}</p>
+            <p style={{ width: "59%" }}>{heroDesc}</p>
           </div>
         </div>
-        <div style={{ paddingTop: "4.5rem", textAlign: "center" }}>
-          <h3 className="font-bold text-base text-[#B1232B]	">{aboutHead}</h3>
+        <div
+          style={{
+            paddingTop: "4.5rem",
+            paddingLeft: "2rem",
+            paddingRight: "2rem",
+          }}
+        >
+          <h3 className="font-bold text-xl text-[#B1232B]	">{aboutHead}</h3>
           <p className="pt-5">{aboutDesc}</p>
         </div>
-        <div className="flex h-full" style={{ paddingTop: "4rem" }}>
-          <img
-            src={aboutImg}
-            alt=""
-            style={{ width: "35%", paddingRight: "5rem" }}
-          />
-          <div>
-            <h3 className="font-bold text-xl">{aboutImgHead}</h3>
+        <div
+          className="flex h-full"
+          style={{ paddingTop: "4rem", paddingLeft: "6rem" }}
+        >
+          <img src={aboutImg} alt="" style={{ width: "35%" }} />
+          <div className="pl-10">
+            <h3 className="font-bold text-2xl ">{aboutImgHead}</h3>
             <p>{aboutImgDesc}</p>
             <div className="pt-4">
               <div className="flex text-[#B1232B] font-bold text-2xl	pr-3">
@@ -344,8 +362,9 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
         </div>
       </div>
       <div>
-        <h2>Top Articles</h2>
-      <div className="flex">{TopArticle}</div></div>
+        <h2 className="font-bold text-2xl pl-4 pt-3 pb-5 text-[#3C3C3C]">Top Articles</h2>
+        <div className="flex ">{TopArticle}</div>
+      </div>
       <Footer props={_site} />
     </>
   );

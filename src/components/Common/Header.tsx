@@ -116,7 +116,7 @@ const Header = (headprops: Type) => {
             {upperBuy}
           </a>
           <a href={UpperHeaderLink}>
-            <img src={UpperHeaderIcon} alt="" style={{ height: "20px" }} />
+            <img src={UpperHeaderIcon} alt="" style={{ height: "20px" ,paddingRight:"5px"}} />
           </a>
           <br />
           {LowerHeaderIcon}
