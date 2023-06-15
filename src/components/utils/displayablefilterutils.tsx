@@ -2,7 +2,7 @@ import {
   AppliedQueryFilter,
   DisplayableFacet,
   SelectableStaticFilter,
-} from "@yext/search-headless-react";
+} from "@yext/-react";
 import { DisplayableFilter } from "../../models/displayableFilter";
 import { getFilterDisplayValue } from "./filterutils";
 

@@ -17,17 +17,19 @@ import {
   DirectAnswer,
   AppliedFilters,
   LocationBias,
+  VerticalResults
 } from "@yext/search-ui-react";
-import VerticalResults from "../components/VerticalResults";
+
 import {
   SearchHeadlessProvider,
   provideHeadless,
 } from "@yext/search-headless-react";
 import "../index.css";
 import Navigation from "../components/Navigation";
-import { BlogsCard } from "../components/cards/BlogsCard";
+
 import Footer from "../components/Common/Footer";
 import Header from "../components/Common/Header";
+import BlogCard from "../components/cards/BlogCard";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return "blogs";
@@ -59,7 +61,7 @@ const Blogs: Template<TemplateRenderProps> = (document) => {
             <SpellCheck />
             <ResultsCount />
             <AppliedFilters hiddenFields={["builtin.entityType"]} />
-            <VerticalResults CardComponent={BlogsCard}/>
+            <VerticalResults CardComponent={BlogCard}/>
             <LocationBias />
           </div>
           <Pagination />

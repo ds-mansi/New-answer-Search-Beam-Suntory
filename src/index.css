@@ -165,16 +165,17 @@
 .breadcrumb{
   padding: 10px 16px;
   list-style: none;
-  background-color: rgb(100, 14, 14);
+  /* background-color: rgb(100, 14, 14); */
   }
   
 .breadcrumb-item{
   display: inline;
   font-size: 18px;
+  font-weight: bold;
   }
 
 .breadcrumb li+li:before{
   padding: 8px;
   color: black;
-  content: ">";
+  content: "/";
 }

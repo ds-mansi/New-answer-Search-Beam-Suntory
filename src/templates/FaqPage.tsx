@@ -17,17 +17,17 @@ import {
   DirectAnswer,
   AppliedFilters,
   LocationBias,
+  VerticalResults
 } from "@yext/search-ui-react";
-import VerticalResults from "../components/VerticalResults";
 import {
   SearchHeadlessProvider,
   provideHeadless,
 } from "@yext/search-headless-react";
 import "../index.css";
 import Navigation from "../components/Navigation";
-import { FaqCard } from "../components/cards/FaqCard";
 import Header from "../components/Common/Header";
 import Footer from "../components/Common/Footer";
+import FaqCard from "../components/cards/FaqCard";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return "faqs";

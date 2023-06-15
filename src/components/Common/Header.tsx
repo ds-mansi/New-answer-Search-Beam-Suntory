@@ -23,6 +23,7 @@ export interface UpperHeader {
   headerTextLink: Link;
   headerUpperIcon: Image;
   headerUpperIconLink: Link;
+  searchIconImg: Image;
 }
 export interface LowerHeader {
   headerLowerIcons: Image;
@@ -44,13 +45,10 @@ export interface propsType {
 export interface Type {
   props: propsType;
 }
-
 const Header = (headprops: Type) => {
-
-
-    const Logo = headprops?.props?.c_header?.logo?.url
-      ? headprops.props.c_header.logo.url
-      : "";
+  const Logo = headprops?.props?.c_header?.logo?.url
+    ? headprops.props.c_header.logo.url
+    : "";
   const headnav = headprops?.props?.c_header?.navbar?.map((nav: Link) => {
     return (
       <>
@@ -75,6 +73,10 @@ const Header = (headprops: Type) => {
     .link
     ? headprops.props.c_headerUpper.headerUpperIconLink.link
     : "";
+
+  const SeachIcon = headprops?.props?.c_headerUpper?.searchIconImg?.url
+    ? headprops.props.c_headerUpper.searchIconImg.url
+    : "";
   const LowerHeaderIcon = headprops?.props?.c_lowerHeader?.map(
     (lower: LowerHeader) => {
       return (
@@ -97,12 +99,18 @@ const Header = (headprops: Type) => {
             style={{ height: "150px", padding: "10px 0px 10px 25px" }}
           />
         </a>
-        {headnav}
+        <div className="flex">{headnav}</div>
+        <div className="flex">
+        <a href="https://master-restfully--potential--katydid-sbx-pgsdemo-com.sbx.preview.pagescdn.com/index?query=">
+          <img src={SeachIcon} />
+        </a>
         <a href={upperLink}>{upperBuy}</a>
         <a href={UpperHeaderLink}>
           <img src={UpperHeaderIcon} alt="" style={{ height: "20px" }} />
         </a>
-        {LowerHeaderIcon}
+        </div>
+        <br/>
+        <div className="flex">{LowerHeaderIcon}</div>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Link, SocialIcon, Type } from "./Header";
+import { SocialIcon, Type } from "./Header";
+import { Link } from "../../types/type";
 
 const Footer = (footerprops: Type) => {
 

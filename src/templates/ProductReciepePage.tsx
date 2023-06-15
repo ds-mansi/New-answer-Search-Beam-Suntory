@@ -26,10 +26,10 @@ import {
 } from "@yext/search-headless-react";
 import "../index.css";
 import Navigation from "../components/Navigation";
-import { ProductReciepeCard } from "../components/cards/ProductReciepeCard";
 import Facets from "../components/Facets";
 import Header from "../components/Common/Header";
 import Footer from "../components/Common/Footer";
+import ProductReciepeCard from "../components/cards/ProductReciepeCard";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return "product_reciepes";

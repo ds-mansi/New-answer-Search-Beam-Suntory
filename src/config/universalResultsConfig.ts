@@ -1,10 +1,9 @@
 import StandardSection from "../sections/StandardSection";
-import { ProductsCard } from "../components/cards/ProductsCard";
 import { VerticalConfig } from "../components/UniversalResults";
-import { ArticlesCard } from "../components/cards/ArticlesCard";
-import { FaqCard } from "../components/cards/FaqCard";
-import { ProductReciepeCard } from "../components/cards/ProductReciepeCard";
-import { BlogsCard } from "../components/cards/BlogsCard";
+import ProductCard from "../components/cards/ProductCard";
+import BlogCard from "../components/cards/BlogCard";
+import FaqCard from "../components/cards/FaqCard";
+import ProductReciepeCard from "../components/cards/ProductReciepeCard";
 
 export type UniversalResultsConfig = Record<string, VerticalConfig>;
 
@@ -23,7 +22,7 @@ export const universalResultsConfig: UniversalResultsConfig = {
     label: "Blogs",
     viewAllButton: true,
     cardConfig: {
-      CardComponent: BlogsCard,
+      CardComponent: BlogCard,
       showOrdinal: false,
     },
   },
@@ -41,7 +40,7 @@ export const universalResultsConfig: UniversalResultsConfig = {
     label: "Products",
     viewAllButton: true,
     cardConfig: {
-      CardComponent: ProductsCard,
+      CardComponent: ProductCard,
       showOrdinal: false,
     },
   },

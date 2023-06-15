@@ -294,7 +294,7 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
           </ol>
           <img src={bannerImage} alt="" />
           <div className="absolute inset-y-0 pt-7 pl-3 text-white w-8/12">
-            <h2 className="font-bold">{bannerHead}</h2>
+            <h2 className="font-bold pt-8 text-2xl 	">{bannerHead}</h2>
             <p>{bannerDesc}</p>
           </div>
         </div>
@@ -302,7 +302,7 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
           <img
             src={heroImage}
             alt=""
-            style={{ float: "right", width: "30%" }}
+            style={{ float: "right", width: "30%",marginRight:"4rem",marginTop:"2rem" }}
           />
           <div
             style={{
@@ -317,7 +317,7 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
               <h2>{heroHead1}</h2>
               <h2>{heroHead2}</h2>
             </div>
-            <p style={{ width: "59%", color: "#B1232B" }}>{heroDesc}</p>
+            <p style={{ width: "59%"}}>{heroDesc}</p>
           </div>
         </div>
         <div style={{ paddingTop: "4.5rem", textAlign: "center" }}>
