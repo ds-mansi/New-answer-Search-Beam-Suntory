@@ -9,11 +9,14 @@ const BlogCard: CardComponent<Ce_blogs> = ({
   const blog: Ce_blogs = result.rawData;
 
   console.log(blog, "blog");
-  const blogImage=blog?.c_blogImage?.url ? blog.c_blogImage.url : "";
+  const blogImage = blog?.c_blogImage?.url ? blog.c_blogImage.url : "";
 
   return (
     <>
-    <div className="justify-between border rounded-lg mb-4 p-4 shadow-sm" style={{ width: "34%" }}>
+      <div
+        className="justify-between border rounded-lg mb-4 p-4 shadow-sm"
+        style={{ width: "34%" }}
+      >
         <img
           src={blogImage}
           style={{

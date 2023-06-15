@@ -18,8 +18,9 @@ import {
   DirectAnswer,
   AppliedFilters,
   LocationBias,
+  VerticalResults
 } from "@yext/search-ui-react";
-import VerticalResults from "../components/VerticalResults";
+
 import {
   SearchHeadlessProvider,
   provideHeadless,

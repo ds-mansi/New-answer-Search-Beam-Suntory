@@ -53,7 +53,7 @@ const Header = (headprops: Type) => {
     return (
       <>
         <ul>
-          <li style={{ padding: "50px 0px 0px 100px" }}>
+          <li style={{ padding: "60px 0px 0px 100px" }}>
             <a href={nav.link}>{nav.label}</a>
           </li>
         </ul>
@@ -84,6 +84,7 @@ const Header = (headprops: Type) => {
           <img
             src={lower?.headerLowerIcons?.url}
             alt={lower?.iconsLink?.label}
+            style={{ height: "20px", paddingRight: "5px" }}
           />
         </a>
       );
@@ -100,17 +101,26 @@ const Header = (headprops: Type) => {
           />
         </a>
         <div className="flex">{headnav}</div>
-        <div className="flex">
-        <a href="https://master-restfully--potential--katydid-sbx-pgsdemo-com.sbx.preview.pagescdn.com/index?query=">
-          <img src={SeachIcon} />
-        </a>
-        <a href={upperLink}>{upperBuy}</a>
-        <a href={UpperHeaderLink}>
-          <img src={UpperHeaderIcon} alt="" style={{ height: "20px" }} />
-        </a>
+        <div className="flex m-auto">
+          <a href="https://master-restfully--potential--katydid-sbx-pgsdemo-com.sbx.preview.pagescdn.com/index?query=">
+            <img src={SeachIcon} style={{ height: "20px" }} />
+          </a>
+          <a
+            href={upperLink}
+            style={{
+              height: "20px",
+              padding: "0px 5px 0px 5px",
+              fontWeight: "semi-bold",
+            }}
+          >
+            {upperBuy}
+          </a>
+          <a href={UpperHeaderLink}>
+            <img src={UpperHeaderIcon} alt="" style={{ height: "20px" }} />
+          </a>
+          <br />
+          {LowerHeaderIcon}
         </div>
-        <br/>
-        <div className="flex">{LowerHeaderIcon}</div>
       </div>
     </>
   );
