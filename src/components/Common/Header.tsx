@@ -53,7 +53,7 @@ const Header = (headprops: Type) => {
     return (
       <>
         <ul>
-          <li style={{ padding: "60px 0px 0px 100px" }}>
+          <li className="navbar">
             <a href={nav.link}>{nav.label}</a>
           </li>
         </ul>

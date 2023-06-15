@@ -277,8 +277,7 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
     <>
       <Header props={_site} />
       <div>
-        <div className="relative ">
-          <ol className="breadcrumb">
+      <ol className="breadcrumb">
             <li className="breadcrumb-item">
               {" "}
               <a href="#">Home </a>
@@ -292,9 +291,11 @@ const BlogDetailPage: Template<TemplateRenderProps> = ({ document }) => {
             </li>
             <li className="breadcrumb-item"> {document.name} </li>
           </ol>
+        <div className="relative ">
+          
           <img src={bannerImage} alt="" />
-          <div className="absolute inset-y-0 pt-7 pl-3 text-white w-8/12">
-            <h2 className="font-bold pt-8 text-2xl 	">{bannerHead}</h2>
+          <div className="absolute inset-y-0 pl-3 text-white w-8/12">
+            <h2 className="font-bold pt-2 text-2xl 	">{bannerHead}</h2>
             <p>{bannerDesc}</p>
           </div>
         </div>

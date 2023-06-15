@@ -179,3 +179,13 @@
   color: black;
   content: "/";
 }
+
+.navbar {
+  font-weight: bold;
+  padding:60px 0px 0px 100px ;
+}
+.navbar:hover{
+  color: #B12328;
+  text-decoration: underline;
+}
+
